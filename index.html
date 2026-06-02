@@ -83,6 +83,7 @@
             <p>
             사령관님,
             어떤 작전에 병력을 투입하시겠습니까?
+            (※주의: 생성형 인공지능에 의해 제작된 자료로, 약간의 오타와 오류가 있을 수 있습니다.)
             </p>
 
             <hr>
@@ -91,6 +92,12 @@
 
             <button onclick="showHumanities()">
             📚 인문학 × 역사 융합 작전
+            </button>
+
+            <br><br>
+
+            <button onclick="showSocial()">
+            🏛 사회과학 × 역사 융합 작전
             </button>
 
             <br><br>
@@ -107,8 +114,8 @@
 
             <br><br>
 
-            <button onclick="showSocial()">
-            🏛 사회과학 × 역사 융합 작전
+            <button onclick="showMedical()">
+            🚑 의학 × 역사 융합 작전
             </button>
 
             <br><br>
@@ -224,25 +231,25 @@
                 <br><br>
 
                 <button onclick="showCard('1984_card.jpg')">
-                📚 『1984』는 왜 지금도 읽힐까?
-                </button>
-
-                <br><br>
-
-                <button onclick="showCard('language_card.jpg')">
-                🗣 전쟁은 언어를 어떻게 바꾸었을까?
+                📚 조지 오웰의『1984』는 왜 지금도 읽힐까?
                 </button>
 
                 <br><br>
 
                 <button onclick="showCard('literature_card.jpg')">
-                ✍ 전쟁 문학은 무엇을 기록하는가?
+                ✍ 전쟁 문학은 무엇을 기록하는가? - 『서부전선 이상 없다』
                 </button>
 
                 <br><br>
 
-                <button onclick="showCard('humanrights_card.jpg')">
-                ⚖ 인간은 왜 인권을 고민하게 되었을까?
+                <button onclick="showCard('diplomacy_card.jpg')">
+                ⚖ 인간은 왜 인권을 고민하게 되었을까? - 대서양 헌장
+                </button>
+
+                <br><br>
+
+                <button onclick="showCard('language_card.jpg')">
+                🗣 전쟁은 새로운 단어를 어떻게 만들었을까?
                 </button>
 
                 `;
@@ -331,6 +338,44 @@
 
         }
 
+        function showMedical() {
+
+            document.getElementById("details").innerHTML = `
+
+            <h2>⚙🚑 의학 × 역사 융합 작전</h2>
+
+                <button onclick="showCard('ptsd_card.jpg')">
+                🧠 PTSD는 어떻게 발견되었을까? 
+                </button>
+
+                <br><br>
+
+                <button onclick="showCard('surgery_card.jpg')">
+                ❤️ 외상외과는 왜 전쟁터에서 발전했을까? 
+                </button>
+
+                <br><br>
+
+                <button onclick="showCard('xray_card.jpg')">
+                ☢ X선은 어떻게 제3의 눈이 되었을까?
+                </button>
+
+                <br><br>
+
+                <button onclick="showCard('medic_card.jpg')">
+                ⛑ 전쟁터에서 의사는 어떻게 생명을 살렸을까? 
+                </button>
+
+                <br><br>
+
+                <button onclick="showCard('virus_card.jpg')">
+                🦠 왜 독감은 전쟁보다 더 많은 사람을 죽였을까? - 스페인 독감과 세계대전
+                </button>
+
+                `;
+
+        }        
+
         function showSocial() {
 
             document.getElementById("details").innerHTML = `
@@ -343,26 +388,32 @@
 
             <br><br>
 
-            <button onclick="showCard('propaganda_social_card.jpg')">
-            📰 선전은 사람을 움직일 수 있을까?
+            <button onclick="showCard('ideology_card.jpg')">
+            📰 자본주의와 공산주의는 섞일 수 있을까? 
             </button>
 
             <br><br>
 
             <button onclick="showCard('economy_card.jpg')">
-            💰 전쟁은 경제를 성장시키는가?
+            💵 달러는 어떻게 세계의 돈이 되었을까? 
             </button>
 
             <br><br>
 
             <button onclick="showCard('eichmann_card.jpg')">
-            🧠 악의 평범성이란 무엇인가?
+            🧠 평범한 사람도 악한 행동에 가담할 수 있는가? - 악의 평범성
             </button>
 
             <br><br>
 
-            <button onclick="showCard('democracy_card.jpg')">
-            🏛 민주주의는 어떻게 승리했을까?
+            <button onclick="showCard('map_card.jpg')">
+            🗺 국경은 누가 정하는 것일까? - 전쟁이 만든 지도
+            </button>
+            
+            <br><br>
+
+            <button onclick="showCard('law_card.jpg')">
+            ⚖ 전쟁 범죄는 누가 판단할 수 있을까? 
             </button>
 
             `;
@@ -376,33 +427,38 @@
             <h2>📜 역사 심화 탐구 작전</h2>
 
             <button onclick="showCard('hitler_card.jpg')">
-            🧔 히틀러는 왜 집권할 수 있었을까?
+            🧔 전쟁은 독재자 한 명에 의해서 일어나는 것일까? - 민족주의와 인종주의
             </button>
 
             <br><br>
 
-            <button onclick="showCard('dictator_card.jpg')">
-            ⚔ 전쟁은 정말 독재자 한 명 때문에 일어날까?
+            <button onclick="showCard('barbarossa_card.jpg')">
+            ⚔ 히틀러는 왜 소련을 공격했을까? - 바르바로사 작전
             </button>
 
             <br><br>
 
-            <button onclick="showCard('winner_card.jpg')">
-            📚 승자의 역사는 얼마나 믿을 수 있을까?
+            <button onclick="showCard('japan_card.jpg')">
+            ⚔ 일본군은 왜 죽음을 명예로 여겼을까? - 가미카제와 군국주의
             </button>
 
             <br><br>
 
             <button onclick="showCard('memory_card.jpg')">
-            🕯 기억은 어떻게 역사가 되는가?
+            🕯 기억은 어떻게 역사가 되는가? - 홀로코스트와 난징대학살
             </button>
 
             <br><br>
 
-            <button onclick="showCard('unfinishedwar_card.jpg')">
-            🌏 제2차 세계대전은 아직 끝나지 않았는가?
+            <button onclick="showCard('education_card.jpg')">
+            📚 우리는 세계대전을 어떻게 가르쳐야 할까? - 선악의 딜레마
             </button>
 
+            <br><br>
+
+            <button onclick="showCard('climate_card.jpg')">
+            🌏 Q. 인류는 왜 기후변화를 막지 못했을까? - 전후 경제성장과 탄소의 시대
+            </button>
             `;
 
         }
