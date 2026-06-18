@@ -7,8 +7,8 @@
 
 /* =========================================================
    01. 학과 데이터베이스
-   - 이미지 파일명 규칙: images/학과명.png
-   - 예: 간호학과 → images/간호학과.png
+   - 이미지 파일명 규칙: images/학과명.jpg
+   - 예: 간호학과 → images/간호학과.jpg
    ========================================================= */
 
 const majors = [
@@ -127,7 +127,7 @@ function setHTML(id, html) {
 }
 
 function getMajorImageFileName(majorName) {
-  return `majors/${majorName}.png`;
+  return `majors/${majorName}.jpg`;
 }
 
 function getPlanAImageFileName(fileName) {
