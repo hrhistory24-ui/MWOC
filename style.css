@@ -1,0 +1,772 @@
+/* =========================================================
+   MODERN WORLD OPERATIONS COMMAND
+   정보국 기밀사령부 다크 베이스 CSS
+   ========================================================= */
+
+:root {
+    --bg: #080909;
+    --bg-2: #101312;
+    --panel: #171a18;
+    --panel-2: #20241f;
+    --line: #4f5748;
+    --line-soft: rgba(194, 180, 138, 0.25);
+    --paper: #d7c9a5;
+    --paper-dark: #a99567;
+    --ink: #ece3c7;
+    --muted: #b7ad8d;
+    --red: #8b1e1e;
+    --green: #89a46f;
+    --shadow: rgba(0, 0, 0, 0.65);
+
+    --font-title: 'Gmarket Sans', 'Noto Sans KR', sans-serif;
+    --font-body: 'D2Coding', 'Nanum Gothic Coding', monospace;
+    --font-en: 'Special Elite', 'Courier Prime', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(95, 90, 65, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(80, 20, 20, 0.13), transparent 25%),
+        linear-gradient(135deg, #050606 0%, #111411 45%, #070808 100%);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.75;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 36px 36px;
+    opacity: 0.28;
+}
+
+.document {
+    position: relative;
+    width: min(92%, 1180px);
+    margin: 34px auto;
+    padding: clamp(24px, 5vw, 64px);
+    border: 1px solid var(--line-soft);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012)),
+        var(--panel);
+    box-shadow:
+        0 28px 90px var(--shadow),
+        inset 0 0 0 1px rgba(255,255,255,0.035);
+}
+
+.document::before {
+    content: "ARCHIVE ACCESS / AUTHORIZED STUDENT OPERATIONS";
+    display: block;
+    margin-bottom: 28px;
+    padding: 10px 14px;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--muted);
+    font-family: var(--font-en);
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+}
+
+.hero {
+    position: relative;
+    padding: 26px 0 34px;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.declassified {
+    color: var(--paper-dark);
+    font-family: var(--font-en);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-align: center;
+}
+
+.stamp {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    padding: 8px 18px;
+    border: 3px solid var(--red);
+    color: #b34334;
+    font-family: var(--font-en);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 800;
+    transform: rotate(-9deg);
+    opacity: 0.9;
+}
+
+h1 {
+    margin: 24px 0 4px;
+    color: #f2e7c5;
+    font-family: var(--font-en);
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.opening-brief,
+.briefing-zone {
+    margin-top: 34px;
+}
+
+h2,
+h3 {
+    color: #f0dfb0;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    margin-top: 54px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line-soft);
+    font-family: var(--font-title);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+h3 {
+    margin-top: 36px;
+    font-size: clamp(1.05rem, 2.3vw, 1.45rem);
+}
+
+hr {
+    height: 1px;
+    margin: 36px 0;
+    border: 0;
+    background: linear-gradient(90deg, transparent, var(--line-soft), transparent);
+}
+
+button,
+.command-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    margin: 6px 6px 6px 0;
+    padding: 12px 18px;
+    border: 1px solid rgba(215, 201, 165, 0.35);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.01)),
+        #1f241f;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+button:hover,
+.command-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(215, 201, 165, 0.7);
+    background: #2b312a;
+}
+
+.primary {
+    border-color: rgba(139, 30, 30, 0.85);
+    color: #f4e5c0;
+}
+
+.database-status {
+    color: var(--green);
+    font-weight: 800;
+}
+
+.search-guide,
+.empty-result,
+
+.major-search-input,
+input {
+    width: min(100%, 760px);
+    margin-top: 18px;
+    padding: 15px 16px;
+    border: 1px solid rgba(215, 201, 165, 0.38);
+    background: #0d0f0d;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.major-search-input:focus,
+input:focus {
+    outline: 2px solid rgba(137, 164, 111, 0.45);
+}
+
+#planAResult,
+#planBResult,
+#searchResults {
+    margin-top: 20px;
+}
+
+.notice-text {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 28px;
+    background: rgba(0, 0, 0, 0.88);
+    overflow: auto;
+}
+
+.popup-panel {
+    position: relative;
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    padding: 22px;
+    border: 1px solid rgba(215, 201, 165, 0.35);
+    background: #121412;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.75);
+}
+
+.popup-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    min-height: auto;
+    padding: 6px 10px;
+}
+
+.popup-image {
+    display: block;
+    width: 100%;
+    max-height: 88vh;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .document {
+        width: 96%;
+        margin: 14px auto;
+        padding: 20px;
+    }
+
+    .stamp {
+        position: static;
+        width: fit-content;
+        margin: 18px auto 0;
+    }
+
+    button,
+    .command-button {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .popup {
+        padding: 12px;
+    }
+
+    .popup-panel {
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   BGM CONTROL PANEL
+   ========================================================= */
+
+.bgm-control {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid rgba(215, 201, 165, 0.35);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012)),
+        rgba(12, 14, 12, 0.92);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+}
+
+.bgm-button {
+    min-height: 36px;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.bgm-button.is-playing {
+    border-color: rgba(137, 164, 111, 0.75);
+    color: #d9efbd;
+}
+
+.bgm-volume {
+    width: 90px;
+    accent-color: #a99567;
+}
+
+@media (max-width: 768px) {
+    .bgm-control {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        justify-content: space-between;
+    }
+
+    .bgm-volume {
+        width: 120px;
+    }
+}
+
+/* =========================================================
+   PLAN A 2-COLUMN OPERATION LAYOUT
+   ========================================================= */
+
+.plan-a-section {
+    margin-top: 42px;
+}
+
+.plan-a-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.plan-a-menu {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    border: 1px solid rgba(215, 201, 165, 0.26);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008)),
+        rgba(6, 8, 7, 0.45);
+}
+
+.plan-a-menu::before {
+    content: "FIELD OPERATION INDEX";
+    display: block;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(215, 201, 165, 0.18);
+    color: var(--muted);
+    font-family: var(--font-en);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+}
+
+.plan-a-menu-button {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 12px 13px;
+    text-align: left;
+    border-color: rgba(215, 201, 165, 0.24);
+    background: rgba(27, 31, 27, 0.92);
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.plan-a-menu-button:hover {
+    transform: translateX(3px);
+    border-color: rgba(215, 201, 165, 0.58);
+    background: #2a3029;
+}
+
+.plan-a-menu-button.is-active {
+    border-color: rgba(139, 30, 30, 0.95);
+    background:
+        linear-gradient(90deg, rgba(139, 30, 30, 0.42), rgba(31, 36, 31, 0.92));
+    color: #fff0c8;
+    box-shadow: inset 4px 0 0 #8b1e1e;
+}
+
+.plan-a-result {
+    min-height: 360px;
+    padding: 18px;
+    border: 1px solid rgba(215, 201, 165, 0.22);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.008)),
+        rgba(0, 0, 0, 0.18);
+}
+
+.plan-a-detail-panel h2 {
+    margin-top: 0;
+}
+
+.plan-a-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.plan-a-card-button {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 14px 16px;
+    text-align: left;
+    border-color: rgba(215, 201, 165, 0.28);
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01)),
+        rgba(28, 32, 28, 0.9);
+    line-height: 1.55;
+}
+
+.plan-a-card-button:hover {
+    transform: translateX(4px);
+    border-color: rgba(137, 164, 111, 0.65);
+    background: rgba(38, 45, 37, 0.95);
+}
+
+.placeholder-panel {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--muted);
+}
+
+/* 기존 button-grid가 Plan A에 영향을 덜 주도록 조정 */
+.plan-a-section .button-grid {
+    display: block;
+}
+
+/* 모바일에서는 1열로 전환 */
+@media (max-width: 860px) {
+    .plan-a-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-a-menu {
+        position: static;
+    }
+
+    .plan-a-result {
+        min-height: auto;
+    }
+}
+
+/* =========================================================
+   PLAN A 상단 정렬 보정
+   ========================================================= */
+
+.plan-a-layout {
+    align-items: stretch;
+}
+
+.plan-a-menu,
+.plan-a-result {
+    margin-top: 0;
+}
+
+.plan-a-menu {
+    padding: 14px;
+}
+
+.plan-a-result {
+    padding: 14px;
+}
+
+.plan-a-detail-panel h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.plan-a-detail-panel {
+    margin-top: 0;
+}
+
+.plan-a-card-list {
+    margin-top: 18px;
+}
+
+/* =========================================================
+   POPUP CLICK ZOOM + DRAG
+   ========================================================= */
+
+.popup {
+    cursor: zoom-out;
+}
+
+.popup-panel {
+    cursor: default;
+    overflow: hidden;
+}
+
+.popup-content {
+    width: 100%;
+    max-height: 88vh;
+    overflow: hidden;
+}
+
+.popup-image-stage {
+    width: 100%;
+    max-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    user-select: none;
+}
+
+.popup-image {
+    display: block;
+    width: 100%;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    transition: transform 0.16s ease-out;
+    cursor: zoom-in;
+    user-select: none;
+}
+
+.popup-image.is-zoomed {
+    cursor: grab;
+    transition: transform 0.04s linear;
+}
+
+.popup-image.is-zoomed:active {
+    cursor: grabbing;
+}
+
+/* =========================================================
+   POPUP WHEEL ZOOM + DRAG MOVE
+   ========================================================= */
+
+body.popup-open {
+    overflow: hidden;
+}
+
+.popup {
+    cursor: zoom-out;
+    overscroll-behavior: contain;
+}
+
+.popup-panel {
+    cursor: default;
+    overflow: hidden;
+}
+
+.popup-content {
+    width: 100%;
+    max-height: 88vh;
+    overflow: hidden;
+}
+
+.popup-image-stage {
+    width: 100%;
+    height: 88vh;
+    max-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+    touch-action: none;
+}
+
+.popup-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    transition: transform 0.06s linear;
+    cursor: zoom-in;
+    user-select: none;
+    will-change: transform;
+}
+
+.popup-image.is-zoomed {
+    cursor: grab;
+}
+
+.popup-image.is-zoomed:active {
+    cursor: grabbing;
+}
+
+.image-error {
+    padding: 36px 24px;
+    border: 1px solid rgba(139, 30, 30, 0.8);
+    background: #1c0f0f;
+    color: #f0dfb0;
+    font-family: var(--font-body);
+    line-height: 1.8;
+    text-align: center;
+}
+
+.image-error strong {
+    color: #ffb6a0;
+}
+
+/* =========================================================
+   FAQ CLEAN GRID LAYOUT
+   ========================================================= */
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.faq-item {
+    min-width: 0;
+}
+
+.faq-question-button {
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 14px;
+    justify-content: flex-start;
+    text-align: left;
+    line-height: 1.45;
+    border-color: rgba(215, 201, 165, 0.28);
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+        rgba(27, 31, 27, 0.88);
+}
+
+.faq-question-button:hover {
+    transform: translateX(3px);
+    border-color: rgba(215, 201, 165, 0.58);
+    background: rgba(38, 44, 37, 0.95);
+}
+
+/* 모바일에서는 1열 */
+@media (max-width: 760px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   FAQ COLLAPSE MODE
+   ========================================================= */
+
+.faq-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.faq-toggle-button {
+    flex: 0 0 auto;
+    margin-top: 4px;
+    padding: 8px 12px;
+    min-height: 34px;
+    font-size: 0.78rem;
+    opacity: 0.86;
+}
+
+.faq-section.is-collapsed {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    opacity: 0.88;
+}
+
+.faq-section.is-collapsed h2 {
+    margin-bottom: 4px;
+}
+
+.faq-section.is-collapsed p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+@media (max-width: 760px) {
+    .faq-header-row {
+        flex-direction: column;
+    }
+
+    .faq-toggle-button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FAQ POPUP CARD
+   ========================================================= */
+
+.faq-popup-card {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 34px 36px;
+    border: 1px solid rgba(215, 201, 165, 0.38);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+        rgba(22, 25, 22, 0.98);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.035);
+}
+
+.faq-popup-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 5px 9px;
+    border: 1px solid rgba(139, 30, 30, 0.75);
+    color: #f0dfb0;
+    background: rgba(139, 30, 30, 0.28);
+    font-family: var(--font-en);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+}
+
+.faq-popup-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(215, 201, 165, 0.22);
+    color: var(--paper);
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+    line-height: 1.45;
+}
+
+.faq-popup-card p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    word-break: keep-all;
+}
+
+@media (max-width: 760px) {
+    .faq-popup-card {
+        padding: 26px 22px;
+    }
+
+    .faq-popup-card p {
+        font-size: 1rem;
+    }
+}
