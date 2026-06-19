@@ -536,6 +536,7 @@ input:focus {
     align-items: flex-start;
     overflow: hidden;
     user-select: none;
+    touch-action: none;
 }
 
 .popup-image {
