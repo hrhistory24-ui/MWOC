@@ -1089,3 +1089,96 @@ body.popup-open {
         transform: none;
     }
 }
+
+/* =========================================================
+   FAQ POPUP SCROLL PATCH
+   컴퓨터: 마우스 휠 스크롤
+   태블릿: 손가락 세로 스크롤
+   이미지 팝업 확대/축소 기능과 분리
+   ========================================================= */
+
+.popup.faq-popup-mode {
+    overflow: hidden;
+    cursor: default;
+}
+
+.popup.faq-popup-mode .popup-panel {
+    width: min(100%, 900px);
+    max-height: calc(100vh - 56px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup.faq-popup-mode .popup-content {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+
+    /* 태블릿, 모바일에서 손가락 스크롤을 부드럽게 */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+}
+
+.popup.faq-popup-mode .faq-popup-card {
+    width: min(100%, 760px);
+    margin: 0 auto;
+}
+
+/* FAQ 답변 내부 문단 간격 */
+.faq-popup-answer p {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    word-break: keep-all;
+}
+
+.faq-popup-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* 기존 .faq-popup-card p 스타일과 충돌 방지 */
+.faq-popup-card > p {
+    margin: 0;
+}
+
+/* 스크롤바를 기밀문서 분위기에 맞게 정리 */
+.popup.faq-popup-mode .popup-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup.faq-popup-mode .popup-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.popup.faq-popup-mode .popup-content::-webkit-scrollbar-thumb {
+    background: rgba(215, 201, 165, 0.35);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.popup.faq-popup-mode .popup-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(215, 201, 165, 0.55);
+}
+
+@media (max-width: 760px) {
+    .popup.faq-popup-mode {
+        padding: 12px;
+    }
+
+    .popup.faq-popup-mode .popup-panel {
+        max-height: calc(100vh - 24px);
+    }
+
+    .popup.faq-popup-mode .popup-content {
+        max-height: calc(100vh - 72px);
+        padding-right: 4px;
+    }
+
+    .faq-popup-answer p {
+        font-size: 1rem;
+        line-height: 1.78;
+    }
+}
